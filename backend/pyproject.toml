@@ -1,0 +1,11 @@
+
+[project]
+
+name = 'ai_career_advisor'
+version = '0.1.0'
+description  = "I will guide students to make informed decision in career"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+
+where = ['src']
