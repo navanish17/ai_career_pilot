@@ -1,0 +1,26 @@
+# Ignore everything by default
+**
+
+# Allow backend files
+!backend
+!Dockerfile
+!README.md
+!requirements.txt
+
+# Explicitly ignore unrelated folders
+frontend
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.git
+.github
+.idea
+.vscode
+*.sqlite3
+*.db
+*.log
