@@ -10,7 +10,7 @@ from ai_career_advisor.api.routes.roadmap import router as roadmap
 from ai_career_advisor.api.routes.scholarships import router as scholarships
 from ai_career_advisor.api.routes.agent import router as agent
 from ai_career_advisor.api.routes.colleges import router as college_router
-from ai_career_advisor.api.routes.admin_route import router as admin_router
+# from ai_career_advisor.api.routes.admin_route import router as admin_router
 from ai_career_advisor.api.routes.admission_alerts import router as admission_alerts_router
 from ai_career_advisor.api.routes.backward_planner import router as backward_planner_router
 from ai_career_advisor.api.routes.career_insight import router as career_insight
@@ -36,7 +36,7 @@ app.include_router(agent, prefix="/api/agent")
 app.include_router(college_router, prefix="/api")
 
 
-app.include_router(admin_router)
+# app.include_router(admin_router)
 app.include_router(admission_alerts_router)
 app.include_router(backward_planner_router)
 app.include_router(career_insight)
