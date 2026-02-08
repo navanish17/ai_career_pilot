@@ -1,11 +1,22 @@
 from ai_career_advisor.app import create_app 
 from ai_career_advisor.core.logger import logger
-from ai_career_advisor.api.routes import (
-    degree_router, branch, career,
-    auth, profile, quiz, roadmap, scholarships, agent, college_router,
-    admin_router, admission_alerts_router, backward_planner_router,
-    career_insight, chatbot_router, intent_router, recommendations_router
-)
+from ai_career_advisor.api.routes.degree import router as degree_router
+from ai_career_advisor.api.routes.branch import router as branch
+from ai_career_advisor.api.routes.career import router as career
+from ai_career_advisor.api.routes.auth import router as auth
+from ai_career_advisor.api.routes.profile import router as profile
+from ai_career_advisor.api.routes.quiz import router as quiz
+from ai_career_advisor.api.routes.roadmap import router as roadmap
+from ai_career_advisor.api.routes.scholarships import router as scholarships
+from ai_career_advisor.api.routes.agent import router as agent
+from ai_career_advisor.api.routes.colleges import router as college_router
+from ai_career_advisor.api.routes.admin import router as admin_router
+from ai_career_advisor.api.routes.admission_alerts import router as admission_alerts_router
+from ai_career_advisor.api.routes.backward_planner import router as backward_planner_router
+from ai_career_advisor.api.routes.career_insight import router as career_insight
+from ai_career_advisor.api.routes.chatbot import router as chatbot_router
+from ai_career_advisor.api.routes.intent import router as intent_router
+from ai_career_advisor.api.routes.recommendations import router as recommendations_router
 from ai_career_advisor.services.alert_scheduler import start_scheduler
 
 app = create_app()
