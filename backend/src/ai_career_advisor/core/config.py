@@ -12,12 +12,13 @@ class Settings(BaseSettings):
     REDIS_URL: Optional[str] = None
 
     # Email
-    SMTP_HOST: str
-    SMTP_PORT: int
-    SMTP_USERNAME: str
-    SMTP_PASSWORD: str
-    SMTP_FROM_EMAIL: str
-    SMTP_FROM_NAME: str
+    # Email (Optional for startup)
+    SMTP_HOST: Optional[str] = None
+    SMTP_PORT: Optional[int] = None
+    SMTP_USERNAME: Optional[str] = None
+    SMTP_PASSWORD: Optional[str] = None
+    SMTP_FROM_EMAIL: Optional[str] = None
+    SMTP_FROM_NAME: Optional[str] = None
 
     GEMINI_API_KEY: Optional[str] = None
     GEMINI_API_KEY_2: Optional[str] = None  # Alternative Gemini API key
@@ -30,16 +31,11 @@ class Settings(BaseSettings):
     JWT_SECRET: str = "super-secret-key-change-this"
     JWT_ALGORITHM: str = "HS256"
 
-    class Config:
-        # Calculate absolute path to .env file
-        # This file location: backend/src/ai_career_advisor/core/config.py
-        # .env location: backend/.env
-        # Need to go up 4 levels: core -> ai_career_advisor -> src -> backend
-        
-        _current_file = Path(__file__).resolve()
-        _backend_dir = _current_file.parent.parent.parent.parent
-        env_file = str(_backend_dir / ".env")
-        env_file_encoding = "utf-8"
-        case_sensitive = False
+    model_config = {
+        "env_file": str(Path(__file__).resolve().parent.parent.parent.parent / ".env"),
+        "env_file_encoding": "utf-8",
+        "case_sensitive": False,
+        "extra": "ignore"  # Allow extra fields (like HF specific ones)
+    }
 
 settings = Settings()
