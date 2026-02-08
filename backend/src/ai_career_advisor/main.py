@@ -1,6 +1,11 @@
 from ai_career_advisor.app import create_app 
 from ai_career_advisor.core.logger import logger
-from ai_career_advisor.api.routes import *
+from ai_career_advisor.api.routes import (
+    degree_router, branch, career,
+    auth, profile, quiz, roadmap, scholarships, agent, college_router,
+    admin_router, admission_alerts_router, backward_planner_router,
+    career_insight, chatbot_router, intent_router, recommendations_router
+)
 from ai_career_advisor.services.alert_scheduler import start_scheduler
 
 app = create_app()
