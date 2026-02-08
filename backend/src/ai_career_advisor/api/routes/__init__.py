@@ -13,7 +13,7 @@ from .colleges import router as college_router
 from .backward_planner import router as backward_planner_router
 from .admission_alerts import router as admission_alerts_router
 from .chatbot import router as chatbot_router
-from .admin import router as admin_router
+from .admin_route import router as admin_router
 from .intent import router as intent_router
 from .recommendations import router as recommendations_router
 
